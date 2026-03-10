@@ -68,6 +68,6 @@ The app loads Tesseract.js, UTIF (TIFF support), and JSZip from CDNs by default.
 
 ## Copyright & contact
 
-© 2025 Patient Deidentifier. All rights reserved. This software is provided as-is for deidentification of patient documents. Redistribution or modification without permission may be restricted.
+© 2026 Patient Deidentifier. All rights reserved. This software is provided as-is for deidentification of patient documents. Redistribution or modification without permission may be restricted.
 
 **Questions or feedback?** Contact the developer: [angelaliangyy@gmail.com](mailto:angelaliangyy@gmail.com)
