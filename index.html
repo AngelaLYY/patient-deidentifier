@@ -9,7 +9,9 @@
 <body>
   <header>
     <h1>Patient Deidentifier</h1>
+    <p class="tagline">Extract text from scanned patient documents and redact names, addresses, and birth dates.</p>
     <p class="privacy-notice">Runs entirely in your browser. No data is uploaded; nothing leaves your device.</p>
+    <p class="header-contact">© 2026 Patient Deidentifier. All rights reserved. Questions? Contact the developer: <a href="mailto:angelaliangyy@gmail.com">angelaliangyy@gmail.com</a></p>
   </header>
 
   <main>
@@ -20,7 +22,7 @@
       <p id="file-count" class="file-count" aria-live="polite" hidden></p>
 
       <div class="option-group custom-names-group">
-        <label for="custom-name-input">Custom names to redact (e.g. Hoff Laura)</label>
+        <label for="custom-name-input">Custom names to redact (e.g. Angie or Hall, Angie)</label>
         <div class="custom-names-row">
           <input type="text" id="custom-name-input" placeholder="Enter name, then click Add" />
           <button type="button" id="add-name-btn">Add</button>
@@ -51,6 +53,11 @@
       </div>
     </section>
   </main>
+
+  <footer class="app-footer">
+    <p>© 2025 Patient Deidentifier. All rights reserved.</p>
+    <p>Questions? Contact the developer: <a href="mailto:angelaliangyy@gmail.com">angelaliangyy@gmail.com</a></p>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/utif@2/UTIF.js"></script>
