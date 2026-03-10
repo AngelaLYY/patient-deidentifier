@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patient Deidentifier</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Patient Deidentifier</h1>
+    <p class="privacy-notice">Runs entirely in your browser. No data is uploaded; nothing leaves your device.</p>
+  </header>
+
+  <main>
+    <section class="upload-section">
+      <label for="file-input" class="file-label">Choose one or more images (PNG, JPEG, TIFF)</label>
+      <input type="file" id="file-input" accept="image/png,image/jpeg,image/jpg,image/tiff,.tif,.tiff" multiple />
+      <div id="thumbnail-container" class="thumbnail-container" aria-hidden="true"></div>
+      <p id="file-count" class="file-count" aria-live="polite" hidden></p>
+
+      <div class="option-group custom-names-group">
+        <label for="custom-name-input">Custom names to redact (e.g. Hoff Laura)</label>
+        <div class="custom-names-row">
+          <input type="text" id="custom-name-input" placeholder="Enter name, then click Add" />
+          <button type="button" id="add-name-btn">Add</button>
+        </div>
+        <ul id="custom-names-list" class="custom-names-list" aria-label="Custom names to redact"></ul>
+      </div>
+
+      <button type="button" id="deidentify-btn" disabled>Deidentify</button>
+    </section>
+
+    <section id="progress-section" class="progress-section" hidden>
+      <p id="progress-text">Processing…</p>
+      <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+    </section>
+
+    <section id="error-section" class="error-section" hidden>
+      <p id="error-message"></p>
+    </section>
+
+    <section id="review-section" class="review-section" hidden>
+      <h2 id="review-heading">Extracted text (redacted)</h2>
+      <div class="text-output-wrapper">
+        <pre id="redacted-text-output" class="redacted-text-output"></pre>
+      </div>
+      <div class="actions">
+        <button type="button" id="download-text-btn">Download redacted text</button>
+        <button type="button" id="download-zip-btn" class="download-zip-btn" hidden>Download all as ZIP</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/utif@2/UTIF.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3/dist/jszip.min.js"></script>
+  <script src="phi-detector.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
